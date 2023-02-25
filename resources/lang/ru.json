@@ -1,0 +1,20 @@
+{
+    "Welcome": "Добро пожаловать",
+    "To store json in database, follow the link to the": "Для сохранения json в базе данных, перейдите к",
+    "form": "форме",
+    "Home": "На домашнюю страницу",
+    "Fill out the form to send or receive data from the database": "Заполните форму для отправки или получения данных из базы данных",
+    "Method": "Метод запроса",
+    "Choose a request method": "Выберите метод запроса",
+    "Api-token": "Api токен",
+    "JSON data": "Данные в формате JSON",
+    "Submit": "Отправить",
+    "Error": "Ошибка",
+    "Api token is invalid or expired": "Api токен недействителен или просрочен",
+    "Success": "Успешно",
+    "Json object saved successfully": "Json объект успешно сохранен",
+    "Id in database": "Id в базе данных",
+    "Time per request": "Время на запрос",
+    "ms": "мс",
+    "Author": "Автор"
+}
