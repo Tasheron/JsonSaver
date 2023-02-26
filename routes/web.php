@@ -27,3 +27,7 @@ Route::get('setLang/{locale}', function ($locale) {
 Route::get('/form/store', function () {
     return view('form-store');
 });
+
+Route::get('/form/update', function () {
+    return view('form-update');
+});

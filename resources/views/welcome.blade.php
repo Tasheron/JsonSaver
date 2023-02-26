@@ -6,5 +6,8 @@
         <p style="margin:100px 0 0 50px;font-size:28px;">{{ __('To store json in database, follow the link to the') }} 
             <a href="/form/store" style="text-decoration:none;color:#777;font-style:italic;">{{ __('form') }}</a>
         </p>
+        <p style="margin:100px 0 0 50px;font-size:28px;">{{ __('To update json in database, follow the link to the') }} 
+            <a href="/form/update" style="text-decoration:none;color:#777;font-style:italic;">{{ __('form') }}</a>
+        </p>
     </body>
 </html>

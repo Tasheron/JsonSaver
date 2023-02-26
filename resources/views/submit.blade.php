@@ -2,6 +2,9 @@
 <p style="margin:50px 0 0 50px;font-size:28px;">{{ __($message) }}</p>
 @if ($id ?? false)
 <p style="margin:50px 0 0 50px;font-size:28px;">{{ __('Id in database') . ": $id" }}</p>
+@if ($value ?? false)
+<p style="margin:50px 0 0 50px;font-size:28px;">{{ __('New value') . ": $value" }}</p>
+@endif
 <p style="margin:50px 0 0 50px;font-size:28px;">{{ __('Time per request') . ": $time " . __('ms') }}</p>
 <p style="margin:50px 0 0 50px;font-size:28px;">{{ __('Method') . ": $method" }}</p>
 <p style="margin:50px 0 0 50px;font-size:28px;">{{ __('Author') . ": $author" }}</p>
