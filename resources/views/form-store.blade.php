@@ -1,6 +1,6 @@
 @include('change_locale')
 <a href="/" style="padding:20px;margin-top:20px;line-height:30px;text-decoration:none;color:#777">{{ __('Home') }}</a>
-<h1>{{ __('Fill out the form to send or receive data from the database') }}</h1>
+<h1>{{ __('Fill out the form to send data to the database') }}</h1>
 
 <form action="/api/form/store/submit" method="get" id="form">
     @csrf

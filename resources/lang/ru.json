@@ -2,9 +2,13 @@
     "Welcome": "Добро пожаловать",
     "To store json in database, follow the link to the": "Для сохранения json в базе данных, перейдите к",
     "To update json in database, follow the link to the": "Для обновления json в базе данных, перейдите к",
+    "To view all entries link to the": "Для просмотра всех записей, перейдите к",
+    "list": "списку",
+    "All elements": "Все элементы",
     "form": "форме",
     "Home": "На домашнюю страницу",
-    "Fill out the form to send or receive data from the database": "Заполните форму для отправки или получения данных из базы данных",
+    "Fill out the form to send data to the database": "Заполните форму для отправки данных в базу данных",
+    "Fill out the form to update the data in the database": "Заполните форму для обновления данных в базе данных",
     "Method": "Метод запроса",
     "Choose a request method": "Выберите метод запроса",
     "Api-token": "Api токен",
@@ -21,5 +25,9 @@
     "New value": "Новое значение",
     "Time per request": "Время на запрос",
     "ms": "мс",
-    "Author": "Автор"
+    "Author": "Автор",
+    "Json object deleted successfully": "Объект Json удален успешно",
+    "Json object not found": "Объект json не найден",
+    "Value": "Значение",
+    "Delete": "Удалить"
 }

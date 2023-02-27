@@ -3,6 +3,7 @@
 use App\Http\Controllers\JsonController;
 use App\Http\Middleware\CheckAuthor;
 use App\Http\Middleware\CheckToken;
+use App\Models\JsonObject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +22,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['middleware' => CheckToken::class, 'prefix' => 'form'], function() {
+Route::group(['middleware' => CheckToken::class, 'prefix' => 'form'], function () {
     Route::any('store/submit', [JsonController::class, 'store']);
     Route::middleware(CheckAuthor::class)->any('update/submit', [JsonController::class, 'update']);
+});
+
+Route::post('json/delete/{id}', function ($id) {
+    $jsonObject = JsonObject::find($id);
+    if ($jsonObject === null) {
+        return 'Json object not found';
+    }
+    $jsonObject->delete();
+    return 'Json object deleted successfully';
 });

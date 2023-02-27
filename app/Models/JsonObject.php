@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class JsonObject extends Model
 {
@@ -10,8 +11,13 @@ class JsonObject extends Model
 
     public $fillable = [
         'value',
-        'author',
+        'author_id',
     ];
 
     public $timestamps = false;
+
+    public function author(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

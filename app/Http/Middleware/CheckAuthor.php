@@ -19,7 +19,7 @@ class CheckAuthor
     */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::id() != JsonObject::find($request->id)?->author) {
+        if (Auth::id() != JsonObject::find($request->id)?->author_id) {
             return response(view('submit', [
                 'status' => 'Error',
                 'message' => 'You can`t update this json, because you are not the author or id is invalid',

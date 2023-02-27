@@ -2,9 +2,13 @@
     "Welcome": "Welcome",
     "To store json in database, follow the link to the": "To store json in database, follow the link to the",
     "To update json in database, follow the link to the": "To update json in database, follow the link to the",
+    "To view all entries link to the": "To view all entries link to the",
+    "list": "list",
+    "All elements": "All elements",
     "form": "form",
     "Home": "To homepage",
-    "Fill out the form to send or receive data from the database": "Fill out the form to send or receive data from the database",
+    "Fill out the form to send data to the database": "Fill out the form to send data to the database",
+    "Fill out the form to update the data in the database": "Fill out the form to update the data in the database",
     "Method": "Request method",
     "Choose a request method": "Choose a request method",
     "Api-token": "Api token",
@@ -21,5 +25,9 @@
     "New value": "New value",
     "Time per request": "Time per request",
     "ms": "ms",
-    "Author": "Author"
+    "Author": "Author",
+    "Json object deleted successfully": "Json object deleted successfully",
+    "json object not found": "json object not found",
+    "Value": "Value",
+    "Delete": "Delete"
 }

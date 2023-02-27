@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('json_objects', function (Blueprint $table) {
             $table->id();
             $table->string('value')->nullable();
-            $table->string('author');
+            $table->string('author_id');
         });
     }
 

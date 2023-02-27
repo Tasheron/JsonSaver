@@ -17,7 +17,7 @@ class JsonController extends Controller
 
         $json = new JsonObject([
             'value' => $request->data,
-            'author' => $user->id,
+            'author_id' => $user->id,
         ]);
         $json->save();
 

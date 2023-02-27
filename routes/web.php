@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Models\JsonObject;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,4 +31,11 @@ Route::get('/form/store', function () {
 
 Route::get('/form/update', function () {
     return view('form-update');
+});
+
+Route::get('json/show', function () {
+    $jsonObjects = JsonObject::all();
+    return view('json-show', [
+        'jsonObjects' => $jsonObjects,
+    ]);
 });
