@@ -29,5 +29,6 @@
     "Json object deleted successfully": "Json object deleted successfully",
     "json object not found": "json object not found",
     "Value": "Value",
-    "Delete": "Delete"
+    "Delete": "Delete",
+    "Element with id ": "Element with id "
 }

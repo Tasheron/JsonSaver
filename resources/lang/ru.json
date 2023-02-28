@@ -29,5 +29,6 @@
     "Json object deleted successfully": "Объект Json удален успешно",
     "Json object not found": "Объект json не найден",
     "Value": "Значение",
-    "Delete": "Удалить"
+    "Delete": "Удалить",
+    "Element with id ": "Элемент с id "
 }

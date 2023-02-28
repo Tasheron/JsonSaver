@@ -35,7 +35,15 @@ Route::get('/form/update', function () {
 
 Route::get('json/show', function () {
     $jsonObjects = JsonObject::all();
-    return view('json-show', [
+    return view('json-list', [
         'jsonObjects' => $jsonObjects,
+    ]);
+});
+
+Route::get('json/show/{id}', function ($id) {
+    $jsonObject = JsonObject::find($id);
+    return view('json-show', [
+        'id' => $jsonObject->id,
+        'value' => $jsonObject->value,
     ]);
 });
