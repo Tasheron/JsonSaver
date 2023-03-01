@@ -18,7 +18,7 @@ class CheckToken
     */
     public function handle(Request $request, Closure $next)
     {
-        App::setLocale($request->locale);
+        App::setLocale($request->locale ?? config('app.locale'));
         $user = User::where('api_token', $request->api_token)->first();
         if ($user === null || $request->api_token === null || $user->expired_at < time()) {
             return response(view('submit', [

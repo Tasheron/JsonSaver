@@ -47,3 +47,5 @@ Route::get('json/show/{id}', function ($id) {
         'value' => $jsonObject->value,
     ]);
 });
+
+Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);

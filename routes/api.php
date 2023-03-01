@@ -18,20 +18,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::group(['middleware' => CheckToken::class, 'prefix' => 'form'], function () {
-    Route::any('store/submit', [JsonController::class, 'store']);
-    Route::middleware(CheckAuthor::class)->any('update/submit', [JsonController::class, 'update']);
-});
-
-Route::post('json/delete/{id}', function ($id) {
-    $jsonObject = JsonObject::find($id);
-    if ($jsonObject === null) {
-        return 'Json object not found';
-    }
-    $jsonObject->delete();
-    return 'Json object deleted successfully';
+Route::group(['middleware' => sprintf('throttle:%s,1', config('app.limit'))], function() {
+    Route::group(['middleware' => CheckToken::class, 'prefix' => 'form'], function () {
+        Route::any('store/submit', [JsonController::class, 'store']);
+        Route::middleware(CheckAuthor::class)->any('update/submit', [JsonController::class, 'update']);
+    });
+    
+    Route::post('json/delete/{id}', function ($id) {
+        $jsonObject = JsonObject::find($id);
+        if ($jsonObject === null) {
+            return 'Json object not found';
+        }
+        $jsonObject->delete();
+        return 'Json object deleted successfully';
+    });
 });

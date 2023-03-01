@@ -32,7 +32,7 @@ class Auth extends Command
         if ($user === null || !Hash::check($this->argument('password'), $user->password)) {
             exit("Login or password is invalid\n");
         }
-        $user->api_token = hash('sha256', Str::random(60));
+        $user->api_token = Hash::make(Str::random(60));
         $user->expired_at = strtotime('+ 5 mins');
         $user->save();
         exit("Your api token: $user->api_token\n");

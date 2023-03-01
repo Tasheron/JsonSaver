@@ -116,5 +116,6 @@ return [
         'driver' => 'token',
         'provider' => 'users',
         'hash' => true,
+        'limit' => env('API_REQUESTS_LIMIT', 20)
     ],
 ];
