@@ -1,66 +1,54 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Json Saver
+### EN
+This project allows you to store and modify json data in the database.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Building a project
+1. In the root of the project, run **composer install**
+    * In case of an error, can help **composer install --ignore-platform-reqs**
+2. After that, create *.env* in the root of the project, following the example from *.env.example*
+    * For linux: **cp .env.example .env**
+3. Next, you need to add permission to read and write the */storage* folder
+    * For linux: in the root of the project, run **sudo chmod 777 -R ./storage/ && sudo chmod 777 -R ./storage/\***
+4. After that, you need to clear the cache and set the application key using **php artisan config:clear && php artisan key:generate**
+5. To start the project, you need to enter **./vendor/bin/sail up -d** at the root
+6. After that you need to run migrations by using **./vendor/bin/sail artisan migrate**
+7. To fill the database with test users, enter **./vendor/bin/sail artisan db:seed**
 
-## About Laravel
+## Usage
+* To use the api, you will need api_token. To get it, enter **./vendor/bin/sail artisan user:auth {email} {password}** in the terminal. The token validity period is 5 minutes.
+    * Test users (email password):
+        * admin@admin.com admin
+        * moderator@moderator.com moderator
+        * user@user.com user
+* The first form saves json format data (example: {"test":"json"}) to the database.
+* The second form modifies the entries in the database according to the instructions. You need to enter the record id and code for updating the json. The Json from the string takes the form of an object, so to change it, you need to refer to it as an object (for example: $data->foo['bar'] = 1;).
+* The third link displays all records from the database with the ability to delete and view each specific record.
+* The fourth link displays logs.
+* The project also has a limit on the number of api requests set in the config.
+***
+### RU
+Этот проект позволяет хранить и изменять данные json в БД.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Сборка проекта
+1. В корне проекта запустить **composer install**
+    * В случае ошибки может помочь **composer install --ignore-platform-reqs**
+2. После создайте в корне проекта *.env* по примеру из *.env.example*
+    * Для linux: **cp .env.example .env**
+3. Далее нужно выдать разрешение на просмотр и редактирование папки */storage*
+    * Для linux: в корне проекта запустить **sudo chmod 777 -R ./storage/ && sudo chmod 777 -R ./storage/\***
+4. После этого нужно очистить кэш и задать ключ приложения с помощью **php artisan config:clear && php artisan key:generate**
+5. Для запуска проекта в корне требуется ввести **./vendor/bin/sail up -d**
+6. Далее вам требуется запустить миграции командой **./vendor/bin/sail artisan migrate**
+7. Для заполнения базы данных тестовыми пользователями введите **./vendor/bin/sail artisan db:seed**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Использование
+* Для использования апи вам потребуется api_token. Для его получения введите в терминале **./vendor/bin/sail artisan user:auth {email} {password}**. Время действия токена - 5 минут.
+    * Тестовые пользователи (email password):
+        * admin@admin.com admin
+        * moderator@moderator.com moderator
+        * user@user.com user
+* Первая форма сохраняет данные формата json (пример: {"test":"json"}) в базу данных.
+* Вторая форма изменяет записи в базе данных по инструкции. Нужно указать id записи, а так же код для обновления json. Json из строки принимает вид объекта, поэтому для изменения нужно обратиться к нему как к объекту (например: $data->foo['bar'] = 1;).
+* Третья ссылка отображает все записи из базы данныз с возможностью удаления и просмотра каждой конкретной записи.
+* Четвертая ссылка отображает логи.
+* Так же в проекте есть ограничение на кол-во запросов к апи, задаваемое в конфиге.
