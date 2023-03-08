@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => sprintf('throttle:%s,1', config('app.limit'))], function() {
+Route::group(['middleware' => sprintf('throttle:%s,1', config('api.limit'))], function() {
     Route::group(['middleware' => CheckToken::class, 'prefix' => 'form'], function () {
         Route::any('store/submit', [JsonController::class, 'store']);
         Route::middleware(CheckAuthor::class)->any('update/submit', [JsonController::class, 'update']);
